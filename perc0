@@ -1,0 +1,11 @@
+### Percentage with 0 decimals function
+# if percent is NaN (i.e. div/0), call it 0, otherwise round percent to 0 decimals
+# a = numerator, b = denominator
+
+perc0 <- function(a, b) {
+  perc <- a/b*100
+  ifelse(is.nan(perc), 
+         0, 
+         round(perc, digits=0)
+         )
+}
