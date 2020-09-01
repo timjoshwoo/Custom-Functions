@@ -1,6 +1,7 @@
-### paste "n (%)" function
+##### paste_nperc #####
+# print 'n (%)'
 # a = n, b = %
 
-nperc <- function(a, b) {
+paste_nperc <- function(a, b) {
   paste('= ', a, ' (', b, ')', sep='')
 }
