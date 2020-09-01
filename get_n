@@ -1,0 +1,35 @@
+##### get_n #####
+# calculate n for a subset of data given up to 3 criteria
+# data = dataframe, a/b/c = values of variables var1, var2, var3, respectively
+# ignores NAs
+
+get_n <- function(data, var1, a, var2, b, var3, c) {
+  if(missing(var2)) {
+                      nrow(data[
+                                !is.na(data[[var1]]) & 
+                                data[[var1]]==a
+                              ,]
+                          )
+                    } else { 
+  if(missing(var3)) {
+                      nrow(data[
+                                !is.na(data[[var1]]) & 
+                                data[[var1]]==a      & 
+                                !is.na(data[[var2]]) & 
+                                data[[var2]]==b
+                              ,]
+                          )
+                    } else {
+                            nrow(data[
+                                      !is.na(data[[var1]]) & 
+                                      data[[var1]]==a      & 
+                                      !is.na(data[[var2]]) & 
+                                      data[[var2]]==b      &
+                                      !is.na(data[[var3]]) & 
+                                      data[[var3]]==c
+                                    ,]
+                                )
+                           }        
+                           }
+                                                   }
+
